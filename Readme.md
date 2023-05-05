@@ -32,5 +32,9 @@ Note2: This application has custom domain. If you don't have custom domain repla
 
 4. After completing step3, apply the istioConfiguration with SSL.
 
+Kiali Visual
+============
+
+![image](https://user-images.githubusercontent.com/38037037/236433593-5d84b8e9-279e-4752-aac8-5ef40f8d91cb.png)
 
 
