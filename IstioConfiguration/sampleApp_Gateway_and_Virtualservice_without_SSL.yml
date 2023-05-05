@@ -1,0 +1,36 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: sampleapp-gateway
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "thagavalthalam.in"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: sampleapp
+spec:
+  hosts:
+  - "thagavalthalam.in"
+  gateways:
+  - sampleapp-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /feedback
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: backend
+        port:
+          number: 80
+          
